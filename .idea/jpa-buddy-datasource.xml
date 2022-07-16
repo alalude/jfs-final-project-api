@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="9dc80350-45a6-4ad8-ace5-3f600c05a2b6" name="stonk_db" url="jdbc:mysql://localhost:3306/stonk_db" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+  </component>
+</project>
