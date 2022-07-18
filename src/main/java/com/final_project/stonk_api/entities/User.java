@@ -1,8 +1,12 @@
 package com.final_project.stonk_api.entities;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +17,9 @@ public class User {
     private String firstName;
     private String lastName;
     private String avatar;
+    @CreationTimestamp
     private Date createdAt;
-    private Integer teamId;
+    private Integer teamId = null;
 
 //    getters and setters
 
@@ -81,11 +86,10 @@ public class User {
 
     }
 
-    public User(String email, String firstName, String lastName, String avatar, Date createdAt) {
+    public User(String email, String firstName, String lastName, String avatar) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.avatar = avatar;
-        this.createdAt = createdAt;
     }
 }
