@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
     List<User> findByFirstName(String firstName);
+    List<User> findByLastName(String firstName);
 }

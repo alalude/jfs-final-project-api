@@ -1,36 +1,20 @@
-package com.final_project.stonk_api.entities;
+package com.final_project.stonk_api.controllers.dto;
 
-import com.final_project.stonk_api.controllers.dto.UserDTO;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, updatable = false)
-    private Integer id;
+public class UserDTO {
 
     private String email;
     private String firstName;
     private String lastName;
     private String avatar;
-    @CreationTimestamp
-    private Date createdAt;
+//    @CreationTimestamp
+//    private Date createdAt;
     private Integer teamId = null;
 
 //    getters and setters
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getEmail() {
         return email;
@@ -64,14 +48,6 @@ public class User {
         this.avatar = avatar;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public Integer getTeamId() {
         return teamId;
     }
@@ -81,16 +57,17 @@ public class User {
     }
 
 //    constructors
-//    what about teamId?<<<<<<<<<<<<<
 
-    public User() {
 
-    }
+    public UserDTO() {
 
-    public User(UserDTO userDTO) {
-        this.email = userDTO.getEmail();
-        this.firstName = userDTO.getFirstName();
-        this.lastName = userDTO.getLastName();
-        this.avatar = userDTO.getAvatar();
+        }
+
+
+    public UserDTO(String email, String firstName, String lastName, String avatar) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.avatar = avatar;
     }
 }
