@@ -40,9 +40,9 @@ public class TeamDTO {
 
 
 //    constructors
-//    public TeamDTO() {
-//
-//    }
+    public TeamDTO() {
+
+    }
 
     public TeamDTO(String name, String avatar) {
         this.name = name;

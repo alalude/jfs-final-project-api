@@ -34,7 +34,6 @@ public class TeamController {
     //keep
     @PostMapping("/add")
     public Team createNewTeam(@RequestBody TeamDTO newTeamDTO) {
-        System.out.println("Billie Jean");
         return teamService.save(newTeamDTO);
     }
     //keep
