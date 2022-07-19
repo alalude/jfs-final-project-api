@@ -1,82 +1,58 @@
 package com.final_project.stonk_api.controllers;
 
+import com.final_project.stonk_api.controllers.dto.UserDTO;
 import com.final_project.stonk_api.entities.User;
-import com.final_project.stonk_api.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.final_project.stonk_api.service.UserService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-//    @Autowired
-    private final UserRepository userRepository;
+    private final UserService userService;
 
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping
     public Iterable<User> getUser(){
-        return userRepository.findAll();
+        return userService.findAll();
     }
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable("id") Integer id){
 
-        Optional<User> optionalUser = userRepository.findById(id);
-        if(optionalUser.isEmpty()){
-            return null;
-        }
-        return optionalUser.get();
+        return userService.findById(id);
     }
 
     @GetMapping("/firstname")
     public Iterable<User> getUserByFirstName(@RequestParam String firstname) {
-        return userRepository.findByFirstName(firstname);
+        return userService.findByFirstName(firstname);
+    }
+
+    @GetMapping("/lastname")
+    public Iterable<User> getUserByLastName(@RequestParam String lastname) {
+        return userService.findByLastName(lastname);
     }
 
     @PostMapping("/add")
-    public User createNewUser(@RequestBody User user) {
-//        User bob = new User(user);
-        return userRepository.save(user);
+    public User createNewUser(@RequestBody UserDTO newUserDTO) {
+        return userService.save(newUserDTO);
     }
 
     @PutMapping("/{id}")
     public User updateUser(
-            @PathVariable("id") Integer id,
-            @RequestBody User u
+            @PathVariable("id") Integer userId,
+            @RequestBody UserDTO userDTO
     ) {
-        Optional<User> userToUpdateOptional = userRepository.findById(id);
-        if (userToUpdateOptional.isEmpty()) {
-            return null;
-        }
-        User userToUpdate = userToUpdateOptional.get();
-        if (u.getEmail() != null) {
-            userToUpdate.setEmail(u.getEmail());
-        }
-        if (u.getFirstName() != null) {
-            userToUpdate.setFirstName(u.getFirstName());
-        }
-        if (u.getLastName() != null) {
-            userToUpdate.setLastName(u.getLastName());
-        }
-        if (u.getAvatar() != null) {
-            userToUpdate.setAvatar(u.getAvatar());
-        }
-        return userRepository.save(userToUpdate);
+        return userService.update(userId, userDTO);
     }
 
     @DeleteMapping("/{id}")
-    public User deleteUser(@PathVariable("id") Integer id) {
-        Optional<User> userToDeleteOptional = userRepository.findById(id);
-        if (userToDeleteOptional.isEmpty()) {
-            return null;
-        }
-        User userToDelete = userToDeleteOptional.get();
-        userRepository.delete(userToDelete);
-        return userToDelete;
+    public User deleteUser(@PathVariable("id") Integer userId) {
+
+        return userService.delete(userId);
+
     }
 }
