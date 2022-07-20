@@ -94,5 +94,6 @@ public class Holding {
         this.purchasePrice = holdingDTO.getPurchasePrice();
         this.targetPrice = holdingDTO.getTargetPrice();
         this.purchaseQuantity = holdingDTO.getPurchaseQuantity();
+        this.portId = holdingDTO.getPortId();
     }
 }
