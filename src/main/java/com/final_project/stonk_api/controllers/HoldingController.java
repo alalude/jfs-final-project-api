@@ -6,6 +6,7 @@ import com.final_project.stonk_api.service.HoldingService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*") // allowing access from all ports
 @RequestMapping("/holding")
 public class HoldingController {
 
