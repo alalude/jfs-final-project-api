@@ -19,6 +19,7 @@ public class Holding {
     @CreationTimestamp
     private Date purchaseDate;
     private Double targetPrice;
+    private Integer purchaseQuantity;
     private Integer portId = null;
 
 //    getters and setters
@@ -63,6 +64,14 @@ public class Holding {
         this.targetPrice = targetPrice;
     }
 
+    public Integer getPurchaseQuantity() {
+        return purchaseQuantity;
+    }
+
+    public void setPurchaseQuantity(Integer purchaseQuantity) {
+        this.purchaseQuantity = purchaseQuantity;
+    }
+
     public Integer getPortId() {
         return portId;
     }
@@ -84,6 +93,7 @@ public class Holding {
 //        We're going to use default price from the API for the time being
         this.purchasePrice = holdingDTO.getPurchasePrice();
         this.targetPrice = holdingDTO.getTargetPrice();
+        this.purchaseQuantity = holdingDTO.getPurchaseQuantity();
         this.portId = holdingDTO.getPortId();
     }
 }
