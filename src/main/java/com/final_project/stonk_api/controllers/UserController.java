@@ -36,6 +36,7 @@ public class UserController {
         return userService.findByLastName(lastname);
     }
 
+    @CrossOrigin
     @PostMapping("/add")
     public User createNewUser(@RequestBody UserDTO newUserDTO) {
         return userService.save(newUserDTO);
