@@ -7,6 +7,7 @@ import com.final_project.stonk_api.service.PortService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*") // allowing access from all ports
 @RequestMapping("/port")
 public class PortController {
 
