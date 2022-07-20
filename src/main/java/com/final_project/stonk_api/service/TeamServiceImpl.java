@@ -79,7 +79,7 @@ public class TeamServiceImpl implements TeamService {
         List<Team> optionalTeam = teamRepository.findByName(name);
         if(optionalTeam.isEmpty()){
             // throw an exception if the name is invalid (my own addition)
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no team with the first name provided.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no team with the name provided.");
         }
         return teamRepository.findByName(name);
     }

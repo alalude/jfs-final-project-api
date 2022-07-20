@@ -81,7 +81,7 @@ public class PortServiceImpl implements PortService {
         List<Port> optionalPort = portRepository.findByName(name);
         if(optionalPort.isEmpty()){
             // throw an exception if the name is invalid (my own addition)
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no portfolio with the first name provided.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "There is no portfolio with the name provided.");
         }
         return portRepository.findByName(name);
     }
