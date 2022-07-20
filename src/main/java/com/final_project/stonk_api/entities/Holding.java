@@ -1,5 +1,6 @@
 package com.final_project.stonk_api.entities;
 
+import com.final_project.stonk_api.controllers.dto.HoldingDTO;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -14,7 +15,7 @@ public class Holding {
     private Integer id;
 
     private String name;
-    private Double purchasePrice;
+    private Double purchasePrice = null;
     @CreationTimestamp
     private Date purchaseDate;
     private Double targetPrice;
@@ -77,9 +78,11 @@ public class Holding {
 
     }
 
-//    public Holding(HoldingDTO holdingDTO) {
-//        this.name = holdingDTO.getName();
+
+    public Holding(HoldingDTO holdingDTO) {
+        this.name = holdingDTO.getName();
+//        We're going to use default price from the API for the time being
 //        this.purchasePrice = holdingDTO.getPurchasePrice();
-//        this.targetPrice = holdingDTO.getTargetPrice();
-//    }
+        this.targetPrice = holdingDTO.getTargetPrice();
+    }
 }
