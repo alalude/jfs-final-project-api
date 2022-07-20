@@ -6,6 +6,7 @@ public class HoldingDTO {
 //    We're going to use default price from the API for the time being
     private Double purchasePrice;
     private Double targetPrice;
+    private Integer portId;
 
 //    getters and setters
 
@@ -33,6 +34,14 @@ public class HoldingDTO {
         this.purchasePrice = purchasePrice;
     }
 
+    public Integer getPortId() {
+        return portId;
+    }
+
+    public void setPortId(Integer portId) {
+        this.portId = portId;
+    }
+
     //    constructors
 
     public HoldingDTO() {
@@ -45,9 +54,10 @@ public class HoldingDTO {
 //    }
 
 
-    public HoldingDTO(String name, Double purchasePrice, Double targetPrice) {
+    public HoldingDTO(String name, Double purchasePrice, Double targetPrice, Integer portId) {
         this.name = name;
         this.purchasePrice = purchasePrice;
         this.targetPrice = targetPrice;
+        this.portId = portId;
     }
 }
