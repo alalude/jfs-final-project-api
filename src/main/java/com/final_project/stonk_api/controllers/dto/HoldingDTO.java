@@ -7,6 +7,8 @@ public class HoldingDTO {
     private Double purchasePrice;
     private Double targetPrice;
 
+    private Integer purchaseQuantity;
+
 //    getters and setters
 
     public String getName() {
@@ -23,6 +25,14 @@ public class HoldingDTO {
 
     public void setTargetPrice(Double targetPrice) {
         this.targetPrice = targetPrice;
+    }
+
+    public Integer getPurchaseQuantity() {
+        return purchaseQuantity;
+    }
+
+    public void setPurchaseQuantity(Integer purchaseQuantity) {
+        this.purchaseQuantity = purchaseQuantity;
     }
 
     public Double getPurchasePrice() {
@@ -45,9 +55,10 @@ public class HoldingDTO {
 //    }
 
 
-    public HoldingDTO(String name, Double purchasePrice, Double targetPrice) {
+    public HoldingDTO(String name, Double purchasePrice, Double targetPrice, Integer purchaseQuantity) {
         this.name = name;
         this.purchasePrice = purchasePrice;
         this.targetPrice = targetPrice;
+        this.purchaseQuantity = purchaseQuantity;
     }
 }

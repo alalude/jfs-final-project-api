@@ -40,6 +40,10 @@ public class HoldingServiceImpl implements HoldingService {
             holdingToUpdate.setTargetPrice(h.getTargetPrice());
         }
 
+        if (h.getPurchaseQuantity() != null) {
+            holdingToUpdate.setPurchaseQuantity(h.getPurchaseQuantity());
+        }
+
         if (h.getPurchasePrice() != null) {
             holdingToUpdate.setPurchasePrice(h.getPurchasePrice());
         }
