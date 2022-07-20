@@ -44,6 +44,10 @@ public class HoldingServiceImpl implements HoldingService {
             holdingToUpdate.setPurchasePrice(h.getPurchasePrice());
         }
 
+        if (h.getPortId() != null) {
+            holdingToUpdate.setPortId(h.getPortId());
+        }
+
         return holdingRepository.save(holdingToUpdate);
     }
 

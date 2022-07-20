@@ -84,5 +84,6 @@ public class Holding {
 //        We're going to use default price from the API for the time being
         this.purchasePrice = holdingDTO.getPurchasePrice();
         this.targetPrice = holdingDTO.getTargetPrice();
+        this.portId = holdingDTO.getPortId();
     }
 }
