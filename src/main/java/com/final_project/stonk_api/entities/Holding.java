@@ -77,9 +77,9 @@ public class Holding {
 
     }
 
-    public Holding(HoldingDTO holdingDTO) {
-        this.name = holdingDTO.getName();
-        this.purchasePrice = holdingDTO.getPurchasePrice();
-        this.targetPrice = holdingDTO.getTargetPrice();
-    }
+//    public Holding(HoldingDTO holdingDTO) {
+//        this.name = holdingDTO.getName();
+//        this.purchasePrice = holdingDTO.getPurchasePrice();
+//        this.targetPrice = holdingDTO.getTargetPrice();
+//    }
 }
