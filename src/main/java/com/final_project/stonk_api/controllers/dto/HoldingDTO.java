@@ -4,7 +4,7 @@ public class HoldingDTO {
 
     private String name;
 //    We're going to use default price from the API for the time being
-//    private Double purchasePrice;
+    private Double purchasePrice;
     private Double targetPrice;
 
 //    getters and setters
@@ -25,14 +25,29 @@ public class HoldingDTO {
         this.targetPrice = targetPrice;
     }
 
-//    constructors
+    public Double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(Double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
+    //    constructors
 
     public HoldingDTO() {
         System.out.println("ERROR!!!!!!!!!!!");
     }
 
-    public HoldingDTO(String name, Double targetPrice) {
+//    public HoldingDTO(String name, Double targetPrice) {
+//        this.name = name;
+//        this.targetPrice = targetPrice;
+//    }
+
+
+    public HoldingDTO(String name, Double purchasePrice, Double targetPrice) {
         this.name = name;
+        this.purchasePrice = purchasePrice;
         this.targetPrice = targetPrice;
     }
 }
