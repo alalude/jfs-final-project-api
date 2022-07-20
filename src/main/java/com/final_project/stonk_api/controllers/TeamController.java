@@ -7,6 +7,7 @@ import com.final_project.stonk_api.service.TeamService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*") // allowing access from all ports
 @RequestMapping("/team")
 public class TeamController {
     private final TeamService teamService;
