@@ -36,19 +36,19 @@ public class HoldingServiceImpl implements HoldingService {
         if (h.getName() != null && !h.getName().isEmpty()) {
             holdingToUpdate.setName(h.getName());
         }
-        if (h.getTargetPrice() != null && !h.getName().isEmpty()) {
+        if (h.getTargetPrice() != null) {
             holdingToUpdate.setTargetPrice(h.getTargetPrice());
         }
 
-        if (h.getPurchaseQuantity() != null && !h.getName().isEmpty()) {
+        if (h.getPurchaseQuantity() != null) {
             holdingToUpdate.setPurchaseQuantity(h.getPurchaseQuantity());
         }
 
-        if (h.getPurchasePrice() != null && !h.getName().isEmpty()) {
+        if (h.getPurchasePrice() != null) {
             holdingToUpdate.setPurchasePrice(h.getPurchasePrice());
         }
 
-        if (h.getPortId() != null && !h.getName().isEmpty()) {
+        if (h.getPortId() != null) {
             holdingToUpdate.setPortId(h.getPortId());
         }
 
